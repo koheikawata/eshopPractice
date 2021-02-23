@@ -1,4 +1,4 @@
-using eshopPractice.Infrastructure.Data;
+using InMemoryDbSample.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -9,30 +9,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace eshopPractice
+namespace InMemoryDbSample
 {
     public class Program
     {
         public static async Task Main(string[] args)
         {
             var host = CreateHostBuilder(args).Build();
-
-            using (var scope = host.Services.CreateScope())
-            {
-                var services = scope.ServiceProvider;
-                var loggerFactory = services.GetRequiredService<ILoggerFactory>();
-                try
-                {
-                    var catalogContext = services.GetRequiredService<CatalogContext>();
-                    await CatalogContextSeed.SeedAsync(catalogContext, loggerFactory);
-                }
-                catch (Exception ex)
-                {
-                    var logger = loggerFactory.CreateLogger<Program>();
-                    logger.LogError(ex, "An error occured seeding the DB");
-                }
-            }
-
+            using IServiceScope scope = host.Services.CreateScope();
+            IServiceProvider provider = scope.ServiceProvider;
+            using var context = provider.GetRequiredService<CarDbContext>();
+            await context.Database.EnsureCreatedAsync();
             host.Run();
         }
 
