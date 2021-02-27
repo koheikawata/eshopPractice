@@ -7,6 +7,9 @@ Use In memory database and display the front page
 - `Startup.cs`
 - `Constants.cs`
 
+### wwwroot
+- `content/site.css`
+
 ### Pages
 - `Index.cshtml`
 - `Index.cshtml.cs`
@@ -14,6 +17,7 @@ Use In memory database and display the front page
 - `_ViewStart.cshtml`
 - `Shared/_Layout.cshtml`
 - `Shared/_product.cshtml`
+- `Shared/_pagination.cshtml`
 
 ### ApplicationCore
 - `CatalogSettings.cs`
