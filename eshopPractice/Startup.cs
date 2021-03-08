@@ -15,7 +15,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
-
+using eshopPractice.Infrastructure.Logging;
 
 namespace eshopPractice
 {
@@ -56,6 +56,9 @@ namespace eshopPractice
             services.AddScoped<CatalogViewModelService>();
             services.AddScoped<ICatalogItemViewModelService, CatalogItemViewModelService>();
             services.AddScoped<ICatalogViewModelService, CachedCatalogVIewModelService>();
+            services.AddScoped<IBasketViewModelService, BasketViewModelService>();
+            services.AddScoped<IBasketService, BasketService>();
+            services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

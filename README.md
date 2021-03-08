@@ -53,3 +53,35 @@ Use In memory database and display the front page
 
 ### Extensions
 - `CacheHelpers.cs`
+
+## Step 2
+Basket
+```
+Install-Package Ardalis.GuardClauses -Version 3.1.0
+```
+
+### Pages
+- `Basket/BasketItemViewModel.cs`
+- `Basket/BasketViewModel.cs`
+- `Basket/Index.cshtml`
+- `Basket/Index.cshtml.cs`
+
+### Interfaces
+- `IBasketViewModelService.cs`
+
+### ApplicationCore
+- `Interfaces/IBasketService.cs`
+- `Interfaces/IAppLogger.cs`
+- `Entities/BasketAggregate/Basket.cs`
+- `Services/BasketService.cs`
+- `Specificaitons/BasketWithItemsSpecification.cs`
+- `Specifications/CatalogItemsSpecificaiton.cs`
+- `Exceptions/GuardExtensions.cs`
+- `Exceptions/BasketNotFoundException.cs`
+- `Exceptions/EmptyBasketOnCheckoutException.cs`
+
+### Infrastructure
+- `Logging/LoggerAdapter.cs`
+
+### Services
+- `BasketViewModelService.cs`

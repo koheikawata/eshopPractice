@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "eshopPractice", "eshopPractice\eshopPractice.csproj", "{2DF95091-2C83-48F7-9952-26B65AB65B86}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "eshopPractice", "eshopPractice\eshopPractice.csproj", "{2DF95091-2C83-48F7-9952-26B65AB65B86}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InMemoryDbSample", "InMemoryDbSample\InMemoryDbSample.csproj", "{FBA25891-C556-4F9E-865C-617A7EC6D20A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InMemoryDbSample", "InMemoryDbSample\InMemoryDbSample.csproj", "{FBA25891-C556-4F9E-865C-617A7EC6D20A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
