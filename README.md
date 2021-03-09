@@ -105,6 +105,9 @@ Install-Package Microsoft.AspNetCore.Identity.EntityFrameworkCore -Version 5.0.3
 Install-Package Microsoft.AspNetCore.Identity.UI -Version 5.0.3
 ```
 
+### ApplicationCore
+- `Constants/AuthorizationConstants.cs`
+
 ### Infrastructure
 - `Identity/ApplicationUser.cs`
 - `Identity/AppIdentityDbContext.cs`
@@ -114,3 +117,6 @@ Install-Package Microsoft.AspNetCore.Identity.UI -Version 5.0.3
 - `Identity/Pages/Account/Login.cshtml.cs`
 - `Identity/Pages/_ViewImports.cshtml`
 - `Identity/Pages/_ViewStart.cshtml`
+
+### BlazorShared
+- `Authorization/Constants.cs`

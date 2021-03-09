@@ -1,5 +1,7 @@
 using eshopPractice.Infrastructure.Data;
+using eshopPractice.Infrastructure.Identity;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -25,6 +27,10 @@ namespace eshopPractice
                 {
                     var catalogContext = services.GetRequiredService<CatalogContext>();
                     await CatalogContextSeed.SeedAsync(catalogContext, loggerFactory);
+
+                    var userManager = services.GetRequiredService<UserManager<ApplicationUser>>();
+                    var roleManager = services.GetRequiredService<RoleManager<IdentityRole>>();
+                    await AppIdentityDbContextSeed.SeedAsync(userManager, roleManager);
                 }
                 catch (Exception ex)
                 {
