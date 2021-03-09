@@ -96,3 +96,21 @@ Install-Package Ardalis.GuardClauses -Version 3.1.0
 
 ### ViewModels
 - `BasketComponentViewmodel.cs`
+
+## Step 3
+Login, Identity
+
+```
+Install-Package Microsoft.AspNetCore.Identity.EntityFrameworkCore -Version 5.0.3
+Install-Package Microsoft.AspNetCore.Identity.UI -Version 5.0.3
+```
+
+### Infrastructure
+- `Identity/ApplicationUser.cs`
+- `Identity/AppIdentityDbContext.cs`
+
+### Areas
+- `Identity/Pages/Account/Login.cshtml`
+- `Identity/Pages/Account/Login.cshtml.cs`
+- `Identity/Pages/_ViewImports.cshtml`
+- `Identity/Pages/_ViewStart.cshtml`

@@ -16,6 +16,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using eshopPractice.Infrastructure.Logging;
+using eshopPractice.Infrastructure.Identity;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace eshopPractice
 {
@@ -44,11 +47,19 @@ namespace eshopPractice
             services.AddDbContext<CatalogContext>(c =>
                 c.UseInMemoryDatabase("Catalog"));
 
+            services.AddDbContext<AppIdentityDbContext>(options =>
+                options.UseInMemoryDatabase("Identity"));
+
             ConfigureServices(services);
         }
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddIdentity<ApplicationUser, IdentityRole>()
+                       .AddDefaultUI()
+                       .AddEntityFrameworkStores<AppIdentityDbContext>()
+                       .AddDefaultTokenProviders();
+
             services.AddRazorPages();
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(EfRepository<>));
@@ -59,6 +70,8 @@ namespace eshopPractice
             services.AddScoped<IBasketViewModelService, BasketViewModelService>();
             services.AddScoped<IBasketService, BasketService>();
             services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
+
+            // services.AddIdentity<ApplicationUser, IdentityRole>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
