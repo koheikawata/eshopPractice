@@ -55,7 +55,8 @@ Use In memory database and display the front page
 - `CacheHelpers.cs`
 
 ## Step 2
-Basket
+Basket, Checkout, Success
+
 ```
 Install-Package Ardalis.GuardClauses -Version 3.1.0
 ```
@@ -65,6 +66,13 @@ Install-Package Ardalis.GuardClauses -Version 3.1.0
 - `Basket/BasketViewModel.cs`
 - `Basket/Index.cshtml`
 - `Basket/Index.cshtml.cs`
+- `Basket/Checkout.cshtml`
+- `Basket/Checkout.cshtml.cs`
+- `Basket/Success.cshtml`
+- `Basket/Success.cshtml.cs`
+- `Shared/_LoginPartial.cshtml`
+- `Shared/Components/Basket/Default.cshtml`
+- `Shared/Components/Basket.cs`
 
 ### Interfaces
 - `IBasketViewModelService.cs`
@@ -85,3 +93,6 @@ Install-Package Ardalis.GuardClauses -Version 3.1.0
 
 ### Services
 - `BasketViewModelService.cs`
+
+### ViewModels
+- `BasketComponentViewmodel.cs`
