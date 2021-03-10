@@ -71,7 +71,7 @@ namespace eshopPractice
             services.AddScoped<IBasketService, BasketService>();
             services.AddScoped(typeof(IAppLogger<>), typeof(LoggerAdapter<>));
 
-            // services.AddIdentity<ApplicationUser, IdentityRole>();
+            services.AddHttpContextAccessor();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -85,6 +85,9 @@ namespace eshopPractice
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
