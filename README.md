@@ -111,6 +111,7 @@ Install-Package Microsoft.AspNetCore.Identity.UI -Version 5.0.3
 ### Infrastructure
 - `Identity/ApplicationUser.cs`
 - `Identity/AppIdentityDbContext.cs`
+- `Identity/AppIdentityDbContextSeed.cs`
 
 ### Areas
 - `Identity/Pages/Account/Login.cshtml`
