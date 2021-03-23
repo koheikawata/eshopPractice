@@ -77,7 +77,7 @@ namespace eshopPractice.Infrastructure.Data
 
         private IQueryable<T> ApplySpecification(ISpecification<T> spec)
         {
-            var evaluator = new SpecificationEvaluator<T>();
+            var evaluator = new SpecificationEvaluator();
             return evaluator.GetQuery(_dbContext.Set<T>().AsQueryable(), spec);
         }
 
